@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using ObsessionBistro.Data.Entities;
 
 namespace ObsessionBistro.Service
 {
@@ -11,5 +12,12 @@ namespace ObsessionBistro.Service
         {
             _config = config;
         }
+
+        //public DbSet<Address> Addresses{ get; set; }  ---- To add after Address task becomes unblocked
+        public DbSet<Ingredient> Ingredients { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+
     }
 }
