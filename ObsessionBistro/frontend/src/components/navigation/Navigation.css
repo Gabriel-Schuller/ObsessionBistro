@@ -1,0 +1,113 @@
+.navigation-container {
+    width: 100%;
+    height: 75px;
+    background-color: #ea272d;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.20);
+    position: static;
+    top: 0px;
+}
+
+.navigation-content {
+    height: 75px;
+    margin: 0px 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation-content {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.10)
+}
+
+.logo {
+
+    height: 100px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu {
+    background-color: #ea272d;
+}
+
+#item {
+    background-color: inherit;
+    color: #FFFFFF;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: 3px solid #f3464c;
+
+    padding: 0 30px;
+    font-family: calibri;
+    font-weight: bold;
+}
+
+.footer-menu #item {
+    border-left: 2px solid #1b1b1b;
+}
+
+#item:hover {
+    color: #949393;
+
+}
+
+#item.active {
+    background-color: inherit;
+    border-left: 3px solid #f64e68;
+
+}
+
+.footer-menu #item.active {
+    border-left: 2px solid #1b1b1b;
+}
+
+.footer {
+    background-color: #0A0A0A;
+    height: 150px;
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*right: 0;*/
+}
+
+.navigation-content {
+    height: 75px;
+    margin: 0px 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.10)
+}
+
+.menu.footer-menu ul li a {
+    border-left: 3px solid #2E2E2E;
+    color: rgba(255, 255, 255, 0.80)
+}
+
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: myriad pro;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.copyright p {
+    font-family: calibri;
+
+    color: #B9B9B9;
+}
+
+.social {
+    display: flex;
+}
+
+.social a {
+    padding: 5px;
+
+}

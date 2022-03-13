@@ -1,0 +1,7 @@
+.cart {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin: 0 10px;
+}
