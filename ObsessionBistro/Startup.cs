@@ -1,15 +1,21 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ObsessionBistro.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace ObsessionBistro
@@ -27,7 +33,43 @@ namespace ObsessionBistro
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(config =>
+            {
+                config.RegisterValidatorsFromAssemblyContaining<Startup>();
+            });
+
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000").AllowCredentials();
+                });
+            });
+
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+
+                // prevent access from javascript 
+                options.HttpOnly = HttpOnlyPolicy.Always;
+
+                // If the URI that provides the cookie is HTTPS, 
+                // cookie will be sent ONLY for HTTPS requests 
+                // (refer mozilla docs for details) 
+                options.Secure = CookieSecurePolicy.SameAsRequest;
+
+                // refer "SameSite cookies" on mozilla website 
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+
+            });
+
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ObsessionBistro", Version = "v1" });
@@ -47,6 +89,10 @@ namespace ObsessionBistro
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCookiePolicy();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 
