@@ -44,6 +44,7 @@ namespace ObsessionBistro
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IBaseRepository, BaseRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
 
             services.AddCors(opt =>
