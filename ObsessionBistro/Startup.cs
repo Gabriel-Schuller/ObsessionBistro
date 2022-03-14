@@ -39,6 +39,8 @@ namespace ObsessionBistro
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IBaseRepository, BaseRepository>();
@@ -46,9 +48,12 @@ namespace ObsessionBistro
 
             services.AddCors(opt =>
             {
-                opt.AddPolicy("CorsPolicy", policy =>
+                opt.AddPolicy("CorsPolicy", builder =>
                 {
-                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000").AllowCredentials();
+                    builder.WithOrigins("http://localhost:3000")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
                 });
             });
 
