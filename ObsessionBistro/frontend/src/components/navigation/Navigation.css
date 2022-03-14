@@ -7,17 +7,18 @@
     top: 0px;
 }
 
+
 .navigation-content {
     height: 75px;
     margin: 0px 12%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.10);
+    flex: 1;
+
 }
 
-.navigation-content {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.10)
-}
 
 .logo {
 
@@ -31,7 +32,43 @@
     background-color: #ea272d;
 }
 
-#item {
+.
+element.style {
+}
+
+.list-group-horizontal > .list-group-item.active {
+    margin-top: 0;
+}
+
+.list-group-horizontal > .list-group-item:first-child {
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.list-group-item.active {
+    background-color: inherit;
+    border-left: 3px solid #f64e68;
+}
+
+.item {
+    /* background-image: url(https://cabofresh.com/wp-content/themes/cabofresh/assets/images/homepage/homepage-guacbowl.png); */
+    background-image: url(https://media.istockphoto.com/photos/ro/burger-de-br%C3%A2nz%C4%83-cu-sl%C4%83nin%C4%83-pe-fond-negru-%C3%AEntunecat-id1295796202?s=612x612);
+    background-position: 50% 90%;
+}
+
+.list-group-item {
     background-color: inherit;
     color: #FFFFFF;
     border-top: none;
@@ -44,42 +81,38 @@
     font-weight: bold;
 }
 
-.footer-menu #item {
+.footer-menu .item {
     border-left: 2px solid #1b1b1b;
 }
 
-#item:hover {
+.item:hover {
     color: #949393;
 
 }
 
-#item.active {
+.list-group-item.active {
     background-color: inherit;
     border-left: 3px solid #f64e68;
 
 }
 
-.footer-menu #item.active {
+.footer-menu .item.active {
     border-left: 2px solid #1b1b1b;
 }
 
 .footer {
     background-color: #0A0A0A;
     height: 150px;
+    /*-------------------------*/
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
     /*position: absolute;*/
     /*left: 0;*/
     /*bottom: 0;*/
     /*right: 0;*/
 }
 
-.navigation-content {
-    height: 75px;
-    margin: 0px 12%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.10)
-}
 
 .menu.footer-menu ul li a {
     border-left: 3px solid #2E2E2E;

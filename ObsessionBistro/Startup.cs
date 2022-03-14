@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ObsessionBistro.Service;
+using ObsessionBistro.Service.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,9 @@ namespace ObsessionBistro
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddScoped<IBaseRepository, BaseRepository>();
+
 
             services.AddCors(opt =>
             {
