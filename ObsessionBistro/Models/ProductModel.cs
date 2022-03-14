@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ObsessionBistro.Data.Entities
+namespace ObsessionBistro.Models
 {
-    public class Product
+    public class ProductModel
     {
-        public Guid Id { get; set; }
         [Required]
         [StringLength(30, MinimumLength = 5)]
         public string Name { get; set; }
@@ -17,6 +14,5 @@ namespace ObsessionBistro.Data.Entities
         [StringLength(500, MinimumLength = 5)]
         public string Ingredients { get; set; }
         public int Price { get; set; }
-
     }
 }

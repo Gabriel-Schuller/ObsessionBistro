@@ -34,10 +34,7 @@ namespace ObsessionBistro
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddFluentValidation(config =>
-            {
-                config.RegisterValidatorsFromAssemblyContaining<Startup>();
-            });
+            services.AddControllers();
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
