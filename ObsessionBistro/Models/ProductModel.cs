@@ -13,6 +13,8 @@ namespace ObsessionBistro.Models
         [Required]
         [StringLength(500, MinimumLength = 5)]
         public string Ingredients { get; set; }
+
+        public string Category { get; set; } = "Diverse";
         public int Price { get; set; }
     }
 }

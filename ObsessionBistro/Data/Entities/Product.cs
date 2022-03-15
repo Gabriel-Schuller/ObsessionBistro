@@ -16,6 +16,8 @@ namespace ObsessionBistro.Data.Entities
         [Required]
         [StringLength(500, MinimumLength = 5)]
         public string Ingredients { get; set; }
+
+        public string Category { get; set; }
         public int Price { get; set; }
 
     }
