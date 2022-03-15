@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -14,6 +15,8 @@ namespace ObsessionBistro.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _repository;
@@ -67,6 +70,7 @@ namespace ObsessionBistro.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<ActionResult<UserModel>> Post([FromBody] UserModel model)
         {
@@ -106,6 +110,7 @@ namespace ObsessionBistro.Controllers
             return BadRequest();
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<UserModel>> Login(UserModel model)
         {

@@ -122,6 +122,8 @@ namespace ObsessionBistro
 
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
