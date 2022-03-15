@@ -17,7 +17,7 @@ namespace ObsessionBistro.Helpers
         {
             _config = config;
         }
-        private string Generate(User user)
+        public string Generate(User user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -38,5 +38,7 @@ namespace ObsessionBistro.Helpers
             return new JwtSecurityTokenHandler().WriteToken(token);
 
         }
+
+
     }
 }

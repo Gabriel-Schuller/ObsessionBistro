@@ -9,6 +9,7 @@ namespace ObsessionBistro.Service
     {
         Task<User> GetById(Guid id);
 
+
         Task<List<User>> GetAllUsersAsync();
 
         

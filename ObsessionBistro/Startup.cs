@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ObsessionBistro.Helpers;
 using ObsessionBistro.Service;
 using ObsessionBistro.Service.Repositories;
 using System;
@@ -63,6 +64,8 @@ namespace ObsessionBistro
             services.AddScoped<IBaseRepository, BaseRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<JwtService>();
+
 
 
             services.AddCors(opt =>
