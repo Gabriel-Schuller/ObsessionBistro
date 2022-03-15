@@ -9,6 +9,7 @@ namespace ObsessionBistro.Data
         public BistroProfile()
         {
             this.CreateMap<Product, ProductModel>().ReverseMap();
+            this.CreateMap<User, UserModel>().ReverseMap();
         }
     }
 }

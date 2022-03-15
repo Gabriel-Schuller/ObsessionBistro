@@ -16,6 +16,7 @@ namespace ObsessionBistro.Service
         //public DbSet<Address> Addresses{ get; set; }  ---- To add after Address task becomes unblocked
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<User> Users { get; set; }
 
 
     }
