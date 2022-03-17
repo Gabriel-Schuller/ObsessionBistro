@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(https://thumbs.dreamstime.com/b/bezszwowa-deseniowa-pizza-wektorowy-pizza-wz%C3%B3r-89205691.jpg);
+    /*background-image: url(https://thumbs.dreamstime.com/b/bezszwowa-deseniowa-pizza-wektorowy-pizza-wz%C3%B3r-89205691.jpg);*/
     background-attachment: fixed;
     background-color: red;
 }
@@ -12,3 +12,18 @@ body {
 * {
     box-sizing: border-box;
 }
+
+.default-container-between{
+    min-height: 80vh;
+}
+
+.a-navbar{
+        text-decoration: none;
+}
+.homePage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 750px;
+}
+

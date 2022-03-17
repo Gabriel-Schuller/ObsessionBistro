@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ObsessionBistro.Data.Entities
+namespace ObsessionBistro.Models
 {
-    public class Address
+    public class AddressModel
     {
-        public Guid Id { get; set; }
         [Required]
         public string Judet { get; set; }
         [Required]
@@ -18,9 +15,5 @@ namespace ObsessionBistro.Data.Entities
         public string Scara { get; set; }
         public string Etaj { get; set; }
         public string Apartament { get; set; }
-
-        public Guid UserId { get; set; }
-        public User User { get; set; }
-        //public User User { get; set; }  To add after we decide if we use identity or create our own users
     }
 }

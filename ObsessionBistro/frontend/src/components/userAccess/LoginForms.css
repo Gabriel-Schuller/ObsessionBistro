@@ -1,0 +1,171 @@
+
+.container {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+}
+.login-form {
+    width: 500px;
+    height: 450px;
+    position: absolute;
+    left: 50%; /* transform: translateX(-50%) or translate(-left%, -top%) */
+    top: 50%; /* transform: translateY(-50%) or translate(-left%, -top%) */
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.login-form > .form-header {
+    width: 100%;
+    height: 350px;
+    background: #363B4E;
+    border-top-right-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+}
+.login-form > .form-header > h3 {
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 35px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+.login-form > .form-footer {
+    width: 450px;
+    height: 300px;
+    background: #EA272D;
+    position: absolute;
+    left: 50%; /* transform: translateX(-50%) or translate(-left%, -top%) */
+    top: 80%; /* transform: translateY(-80%) or translate(-left%, -top%) */
+    transform: translate(-50%, -80%);
+    box-shadow: 0px 0px 22px rgba(0,0,0,0.46);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+.login-form > .form-footer > .login {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    left: 50%; /* transform: translateX(-50%) or translate(-left%, -top%) */
+    top: 50%; /* transform: translateY(-50%) or translate(-left%, -top%) */
+    transform: translate(-50%, -50%);
+}
+.login-form > .form-footer > .login > .box-input {
+    width: 290px;
+    height: 50px;
+    margin: 20px auto;
+/*    background: white;*/
+    position: relative
+}
+.login-form > .form-footer > .login > .box-input > .input-login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 4px solid white;
+    background: dimgray;
+    border-radius: 4px;
+    padding-left: 20px;
+    color: white;
+    transition: .3s linear;
+}
+.login-form > .form-footer > .login > .box-input > .input-login:focus {
+    border-color: #0082ff;
+}
+.login-form > .form-footer > .login > .box-input > i{
+    color: #ffffff;
+    font-size: 1.3em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+}
+.login-form > .form-footer > .login > .btn {
+    width: 304px;
+    height: 44px;
+    margin-left: 45px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #f0f0f0;
+    color: #5B5B5B;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 44px;
+    position: relative;
+    transition: .3s ease-in-out
+}
+
+.login-form > .form-footer > .login > .btn:hover {
+    width: 308px;
+    height: 48px;
+    line-height: 48px;
+}
+.login-form > .form-footer > .login > .btn:before {
+    content: '';
+    width: 308px;
+    height: 48px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+
+}
+.login-form > .form-footer > .login > .btn:hover:before {
+    border: none;
+}
+.login-form > .form-footer > .login > p {
+    color: rgba(80, 80, 80, 0.6);
+    padding-top: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+}
+.login-form > .form-footer > .login > p:hover { color: white;}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
+@media only screen and (max-width: 500px) {
+    .login-form {
+        width: 100%;
+    }
+    .login-form > .form-footer {
+        width: 90%;
+    }
+    .login-form > .form-footer > .login {
+        width: 90%
+    }
+    .login-form > .form-footer > .login > .box-input {
+        width: 90%
+    }
+    .login-form > .form-footer > .login > .btn {
+        width: 90%;
+    }
+    .login-form > .form-footer > .login > .btn:before {
+        width: 102%;
+    }
+    .login-form > .form-footer > .login > .btn:hover {
+        width: 92%;
+    }
+}
+
+
+footer {
+  width: 100%;
+  height: 50px;
+  background: #363B4E;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  line-height: 50px;
+}
+footer > a {
+  color: white;
+}

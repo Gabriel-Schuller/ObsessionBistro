@@ -17,6 +17,7 @@ namespace ObsessionBistro.Service
 
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Address> Address { get; set; }
 
 
     }

@@ -7,12 +7,14 @@ import Footer from "./components/footer/Footer";
 import HomePage from "./pages/HomePage";
 import Menu from "./pages/Menu";
 import Offers from "./pages/Offers";
-
+import Contact from "./pages/Contact";
+import Background from "./Images/background.png"
 
 function App() {
     return (
-        <div>
+        <div style={{backgroundImage: `url(${Background})`}}>
             <NavBar/>
+            <div className="default-container-between">
             <Routes>
                 <Route path='/' element={<HomePage/>}>
                 </Route>
@@ -23,7 +25,12 @@ function App() {
                 <Route path='/oferte' element={<Offers/>}>
                 </Route>
 
+                <Route path='/contact' element={<Contact/>}>
+                </Route>
+
+
             </Routes>
+                </div>
             <Footer/>
 
         </div>

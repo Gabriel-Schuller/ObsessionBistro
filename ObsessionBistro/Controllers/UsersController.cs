@@ -36,13 +36,30 @@ namespace ObsessionBistro.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<UserModel>>> GetAllUsers()
+        [Authorize(Roles = "Administrator")]
+        public async Task<ActionResult<List<User>>> GetAllUsers()
         {
             try
             {
                 var users = await _repository.GetAllUsersAsync();
 
-                return _mapper.Map<List<UserModel>>(users);
+                return users;
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Server error");
+            }
+        }
+        
+        [HttpGet("/all-admins")]
+        [Authorize(Roles = "Administrator")]
+        public async Task<ActionResult<List<User>>> GetAllAdmins()
+        {
+            try
+            {
+                var users = await _repository.GetAllAdministratorsAsync();
+
+                return users;
             }
             catch (Exception)
             {
@@ -51,7 +68,8 @@ namespace ObsessionBistro.Controllers
         }
 
         [HttpGet("{userID}")]
-        public async Task<ActionResult<UserModel>> Get(Guid userID)
+        [Authorize(Roles = "Administrator")]
+        public async Task<ActionResult<UserModel>> Get(Guid userID, bool makeAdmin= false)
         {
             try
             {
@@ -59,6 +77,15 @@ namespace ObsessionBistro.Controllers
                 if (result == null)
                 {
                     return this.NotFound();
+                }
+                if (makeAdmin)
+                {
+                    result.Role = "Administrator";
+                    if (await _baseRepository.SaveChangesAsync())
+                    {
+                        return _mapper.Map<UserModel>(result);
+                    }
+
                 }
                 return _mapper.Map<UserModel>(result);
             }
@@ -153,6 +180,7 @@ namespace ObsessionBistro.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<ActionResult<UserModel>> Put(Guid id, UserModel model)
         {
             try
@@ -178,6 +206,7 @@ namespace ObsessionBistro.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(Guid id)
         {
             try
@@ -201,6 +230,7 @@ namespace ObsessionBistro.Controllers
             }
             return BadRequest("Failed to delete the camp!");
         }
+
 
     }
 }

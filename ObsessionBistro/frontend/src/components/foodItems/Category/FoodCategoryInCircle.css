@@ -18,16 +18,18 @@
 
 
 .all-the-foods {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 3px solid red;
 }
 
 div.clip-path-container {
   display: inline-block;
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   margin: 10px ;
   padding: 3px;
   cursor: pointer;
@@ -85,6 +87,6 @@ div.clip-path-container {
 
 .item {
   /*background-image: url('https://cabofresh.com/wp-content/themes/cabofresh/assets/images/homepage/homepage-guacbowl.png');*/
-  background-image: url('https://media.istockphoto.com/photos/ro/burger-de-br%C3%A2nz%C4%83-cu-sl%C4%83nin%C4%83-pe-fond-negru-%C3%AEntunecat-id1295796202?s=612x612');
+  /*background-image: url('https://media.istockphoto.com/photos/ro/burger-de-br%C3%A2nz%C4%83-cu-sl%C4%83nin%C4%83-pe-fond-negru-%C3%AEntunecat-id1295796202?s=612x612');*/
   background-position: 50% 90%;
 }

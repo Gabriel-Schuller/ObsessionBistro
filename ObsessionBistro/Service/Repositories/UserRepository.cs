@@ -2,6 +2,7 @@
 using ObsessionBistro.Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ObsessionBistro.Service.Repositories
@@ -14,9 +15,15 @@ namespace ObsessionBistro.Service.Repositories
         {
             _context = context;
         }
+
         public async Task<List<User>> GetAllUsersAsync()
         {
             return await _context.Users.ToListAsync();
+        }
+
+        public async Task<List<User>> GetAllAdministratorsAsync()
+        {
+            return await _context.Users.Where(u => u.Role == "Administrator").ToListAsync();
         }
 
         public async Task<User> GetById(Guid id)

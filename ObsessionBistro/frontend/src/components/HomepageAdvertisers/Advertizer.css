@@ -1,0 +1,50 @@
+.third-row {
+    display: flex;
+}
+
+.flavor, .breakfast {
+    width: 540px;
+    height: 180px;
+    margin: 10px;
+    background-color: #b1b1b1;
+}
+
+.flavor, .breakfast {
+    font-family: calibri;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 15px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5)
+}
+
+.flavor p:nth-child(1),
+.breakfast p:nth-child(1) {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.flavor p:nth-child(2),
+.breakfast p:nth-child(2) {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+}
+
+.flavor {
+    background-color: #ea272d;
+    opacity: 0.95;
+    border-radius: 15px;
+}
+
+.breakfast {
+    background-color: #F9A609;
+    opacity: 0.95;
+    border-radius: 15px;
+}
+
+.a-navbar {
+
+}
+

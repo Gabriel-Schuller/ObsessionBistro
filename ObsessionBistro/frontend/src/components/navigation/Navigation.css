@@ -1,3 +1,8 @@
+.ul-navbar {
+    list-style: none;
+}
+
+
 .navigation-container {
     width: 100%;
     height: 75px;
@@ -7,116 +12,60 @@
     top: 0px;
 }
 
-
 .navigation-content {
     height: 75px;
     margin: 0px 12%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.10);
-    flex: 1;
+}
 
+.ul-navbar {
+    display: flex;
+}
+
+.menu .ul-navbar .li-navbar .a-navbar {
+    padding: 0px 30px;
+    font-family: calibri;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-left: 3px solid #e54c51;
 }
 
 
-.logo {
+.li-navbar:hover {
+    color: blue;
+}
 
+.logo {
     height: 100px;
-    width: 150px;
+    width: 100px;
     background-size: cover;
     background-position: center;
 }
 
-.menu {
-    background-color: #ea272d;
-}
-
-.
-element.style {
-}
-
-.list-group-horizontal > .list-group-item.active {
-    margin-top: 0;
-}
-
-.list-group-horizontal > .list-group-item:first-child {
-    border-bottom-left-radius: 0.25rem;
-    border-top-right-radius: 0;
-}
-
-.list-group-item.active {
-    z-index: 2;
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.list-group-item:first-child {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
-
-.list-group-item.active {
-    background-color: inherit;
-    border-left: 3px solid #f64e68;
-}
-
-.item {
-    /* background-image: url(https://cabofresh.com/wp-content/themes/cabofresh/assets/images/homepage/homepage-guacbowl.png); */
-    background-image: url(https://media.istockphoto.com/photos/ro/burger-de-br%C3%A2nz%C4%83-cu-sl%C4%83nin%C4%83-pe-fond-negru-%C3%AEntunecat-id1295796202?s=612x612);
-    background-position: 50% 90%;
-}
-
-.list-group-item {
-    background-color: inherit;
-    color: #FFFFFF;
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
-    border-left: 3px solid #f3464c;
-
-    padding: 0 30px;
-    font-family: calibri;
-    font-weight: bold;
-}
-
-.footer-menu .item {
-    border-left: 2px solid #1b1b1b;
-}
-
-.item:hover {
-    color: #949393;
-
-}
-
-.list-group-item.active {
-    background-color: inherit;
-    border-left: 3px solid #f64e68;
-
-}
-
-.footer-menu .item.active {
-    border-left: 2px solid #1b1b1b;
+/*--------------------------FOOTER--------------------------*/
+.footer-menu .ul-navbar .li-navbar .a-navbar {
+    border-left: 3px solid #2E2E2E;
+    color: rgba(255, 255, 255, 0.80)
 }
 
 .footer {
     background-color: #0A0A0A;
     height: 150px;
-    /*-------------------------*/
-    display: flex;
-    flex-direction: column;
-    min-height: 50px;
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*right: 0;*/
 }
 
 
-.menu.footer-menu ul li a {
-    border-left: 3px solid #2E2E2E;
-    color: rgba(255, 255, 255, 0.80)
+.social {
+    display: flex;
+}
+
+.social a {
+    padding: 15px;
+}
+
+.social img {
+    height: 15px;
 }
 
 
@@ -134,13 +83,4 @@ element.style {
     font-family: calibri;
 
     color: #B9B9B9;
-}
-
-.social {
-    display: flex;
-}
-
-.social a {
-    padding: 5px;
-
 }

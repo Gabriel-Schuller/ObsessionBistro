@@ -7,14 +7,14 @@ function Footer() {
     return (
         <div className="footer">
             <div className="navigation-content">
-                <img src="/assets/LOGO.png" className="logo" alt="OLALA"></img>
-                <div className="footer-menu">
-                    <ListGroup horizontal>
-                        <ListGroup.Item id="item" as={NavLink} to="">HOME</ListGroup.Item>
-                        <ListGroup.Item id="item" as={NavLink} to="/meniu">MENIU</ListGroup.Item>
-                        <ListGroup.Item id="item" as={NavLink} to="/oferte">OFERTE</ListGroup.Item>
-                        <ListGroup.Item id="item" as={NavLink} to="/contact">CONTACT</ListGroup.Item>
-                    </ListGroup>
+                <img src="/assets/LOGO.png" className="logo" loading="lazy" alt="OLALA"></img>
+                <div className="menu footer-menu">
+                    <ul className="ul-navbar">
+                            <li className="li-navbar"><NavLink className="a-navbar" to="/">HOME</NavLink></li>
+                            <li className="li-navbar"><NavLink className="a-navbar" to="/meniu">MENIU</NavLink></li>
+                            <li className="li-navbar"><NavLink className="a-navbar" to="/oferte">OFERTE</NavLink></li>
+                            <li className="li-navbar"><NavLink className="a-navbar" to="/contact">CONTACT</NavLink></li>
+                        </ul>
                 </div>
                 <div className="social">
                     <a href="https://www.facebook.com/ObsessionBistro"><SiFacebook size="1.5rem"/></a>

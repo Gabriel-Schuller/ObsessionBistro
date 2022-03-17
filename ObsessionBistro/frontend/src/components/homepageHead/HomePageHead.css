@@ -1,0 +1,88 @@
+.first-row {
+    display: flex;
+
+}
+
+.new {
+    width: 540px;
+    height: 320px;
+    margin: 10px;
+    background-color: #B1B1B1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.new p:nth-child(1) {
+    font-size: 40px;
+    font-family: calibri;
+    font-weight: bold;
+    color: White;
+}
+
+.new p {
+    color: #FFFFFF;
+    line-height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+p#new-p {
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5);
+    font-size: 60px;
+}
+
+.new p:nth-child(2) {
+    font-size: 30px;
+    font-family: cailibri;
+    color: black;
+
+}
+
+.new button {
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #ea272d;
+    text-align: center;
+    font-family: calibri;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 16px;
+    border: none;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.new {
+    background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190226-buffalo-chicken-pizza-370-1552084943.jpg);
+    background-size: cover;
+}
+
+.order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 540px;
+    height: 150px;
+    margin: 10px;
+    background-color: #B1B1B1;
+    flex-direction: column;
+    background-color: #ea272d;
+    opacity: 0.95;
+    border-radius: 15px;
+}
+
+.order .a-navbar {
+    font-family: calibri;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5)
+}
+
+.a-navbar{
+    text-decoration: none;
+}
