@@ -144,11 +144,11 @@ namespace ObsessionBistro.Controllers
             try
             {
                 var user = await _repository.GetUserByEmail(model.EmailAddress);
-                if (user == null) return BadRequest(new { message = "Invalid Cridentials" });
+                if (user == null) return BadRequest(new { message = "User doesn't exist" });
 
                 if (!BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
                 {
-                    return BadRequest(new { message = "Invalid Cridentials" });
+                    return BadRequest(new { message = "User doesn't exist" });
                 }
 
                 var jwt = _jwtService.Generate(user);
@@ -171,10 +171,22 @@ namespace ObsessionBistro.Controllers
             }
         }
 
-        [HttpPost("logout")]
+        [HttpGet("logout")]
         public IActionResult Logout()
         {
-            Response.Cookies.Delete("jwt");
+            //Response.Cookies.Delete("jwt" , new CookieOptions
+            //{
+            //    Secure = true,
+            //    HttpOnly = true,
+            //    IsEssential = false,
+            //    Expires = DateTime.Now.AddMonths(1),
+            //    SameSite = SameSiteMode.None
+
+            //});
+            Response.Cookies.Append("jwt", "", new CookieOptions()
+            {
+                Expires = DateTime.Now.AddDays(-1)
+            });
 
             return Ok();
         }
@@ -231,6 +243,24 @@ namespace ObsessionBistro.Controllers
             return BadRequest("Failed to delete the camp!");
         }
 
+        [HttpGet("get-key")]
+        [AllowAnonymous]
+        public IActionResult GetKey()
+        {
+            try
+            {
+                var jwt = Request.Cookies["jwt"];
+
+                var token = _jwtService.Verify(jwt);
+
+                return Ok(jwt);
+            }
+            catch (Exception e)
+            {
+
+                return Unauthorized("Problems with the key");
+            }
+        }
 
     }
 }

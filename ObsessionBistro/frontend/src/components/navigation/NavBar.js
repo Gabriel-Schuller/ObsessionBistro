@@ -4,8 +4,15 @@ import {ListGroup} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navigation.css"
+import {useStore} from "../stores/store";
+import RegistrationNav from "./RegistrationNav";
+import Registration from "../../pages/Registration";
+import {observer} from "mobx-react-lite";
+
 
 function NavBar() {
+    const {loginStore} = useStore()
+
     return (
         <div className="navigation-body">
             <div className="navigation-container">
@@ -20,7 +27,8 @@ function NavBar() {
                             <li className="li-navbar"><NavLink className="a-navbar" to="/contact">CONTACT</NavLink></li>
                         </ul>
                     </div>
-                    <CartButton/>
+                    {loginStore.isLogged ? <RegistrationNav title="Logout"/> : <RegistrationNav title="Login"/>}
+
                 </div>
             </div>
         </div>
@@ -29,4 +37,4 @@ function NavBar() {
     );
 }
 
-export default NavBar;
+export default observer(NavBar);

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./FoodCategoryInCircle.css"
 import FoodCategoryInCircle from "./FoodCategoryInCircle";
 import axios from "axios";
+import {useStore} from "../../stores/store";
 
 const burger = {
     Title: 'Burger',
@@ -14,7 +15,7 @@ const pizza = {
     Image: 'https://media.istockphoto.com/photos/tasty-pepperoni-pizza-and-cooking-ingredients-tomatoes-basil-on-black-picture-id1083487948?k=20&m=1083487948&s=612x612&w=0&h=ROZ5t1K4Kjt5FQteVxTyzv_iqFcX8aqpl7YuA1Slm7w='
 };
 const sweets = {
-    Title: 'Dulciurile',
+    Title: 'Dulciuri',
     Description: 'Nobbo este cofetar. Asadar, cele mai bune dulciuri le gasiti la OBSESSION BISTRO',
     Image: 'https://chefspencil.com/wp-content/uploads/Papanasi.jpg'
 
@@ -27,12 +28,13 @@ const others = {
 
 function FoodICategoriesList() {
 
-    const [products, setproducts] = useState([]);
 
-    useEffect(async () => {
-        const response = await axios.get("https://localhost:44305/api/Products");
-        setproducts(prevState => response.data)
-    }, []);
+    // const [products, setproducts] = useState([]);
+    //
+    // useEffect(async () => {
+    //     const response = await axios.get("https://localhost:44305/api/Products");
+    //     setproducts(prevState => response.data)
+    // }, []);
 
 
 

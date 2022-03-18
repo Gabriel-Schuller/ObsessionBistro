@@ -5,11 +5,10 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {StoreContext, store} from "./components/stores/store";
 
-
 ReactDOM.render(
     <StoreContext.Provider value={store}>
         <BrowserRouter>
-            <App/>
+                <App/>
         </BrowserRouter>
     </StoreContext.Provider>,
     document.getElementById('root')

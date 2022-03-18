@@ -10,6 +10,9 @@ export default class ProductsStore {
     products = [];
     loading = true;
     initialLoading = false;
+    groupedProducts = [];
+    isGrouped = false;
+    groupedCategory= "";
 
     constructor() {
         makeAutoObservable(this)
@@ -20,6 +23,8 @@ export default class ProductsStore {
     }
 
     loadProducts = async () => {
+        this.isGrouped = false;
+        this.groupedCategory= "";
         this.initialLoading = true;
         try {
             await delay(1000);
@@ -33,6 +38,20 @@ export default class ProductsStore {
         } catch (e) {
             console.log(e);
         }
+
+    }
+
+    loadGroupedProducts = (category) => {
+        var producList= this.products;
+        this.groupedProducts = [];
+        producList.forEach( product => {
+
+            if (product.category === category) {
+                this.groupedProducts.push(product)
+            }
+        })
+        this.isGrouped = true;
+        this.groupedCategory = category;
 
     }
 

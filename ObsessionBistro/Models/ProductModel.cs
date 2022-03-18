@@ -5,7 +5,6 @@ namespace ObsessionBistro.Models
 {
     public class ProductModel
     {
-        public Guid Id { get; set; }
         [Required]
         [StringLength(30, MinimumLength = 5)]
         public string Name { get; set; }

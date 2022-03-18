@@ -31,13 +31,13 @@ namespace ObsessionBistro.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ProductModel>>> GetAllProducts()
+        public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
             try
             {
                 var products = await _repository.GetAllAsync();
 
-                return _mapper.Map<List<ProductModel>>(products);
+                return products;
             }
             catch (System.Exception)
             {
