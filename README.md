@@ -100,6 +100,5 @@ None
 ![FileSeparation](Images/HomePage.PNG?raw=true "Title")
 ![FileSeparation](Images/Menu.PNG?raw=true "Title")
 ![FileSeparation](Images/Register.PNG?raw=true "Title")
-![Dependency Packages](Images/DependencyPackages.PNG?raw=true "Title")
 
 
